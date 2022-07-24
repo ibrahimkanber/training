@@ -17,7 +17,7 @@ class ValidationManager {
   private static streetNamePattern = /^[a-zA-Z"-+.,:;/]*$/;
   private static streetNumberPattern = /^[a-zA-Z0-9]*$/;
   private static zipCodePattern = /^[0-9]{4,5}$/;
-  private static townPattern = /^[a-zA-Z0-9.,:;/"]*$/;
+  private static townPattern = /^[a-zA-Z.,:;/"]*$/;
   private static phoneNumberPattern = /^[0-9"+/-]{0,20}$/;
   private static companyNamePattern = /^[a-zA-Z.,:;/"]*$/;
 
