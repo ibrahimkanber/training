@@ -59,7 +59,6 @@ export const Form = () => {
   };
   const saveToList = (obj: Adress) => {
     const isDublicated = !!recordList?.find(el => el.isEqual(obj));
-    console.log(isDublicated);
     if (isDublicated) {
       showAlert('Record result', 'Fail--Record Dublicate');
       return;
@@ -79,7 +78,6 @@ export const Form = () => {
         onChangeText={handleChange(item)}
         value={state[item]}
         label={fields[item]}
-        placeholder="placeholder"
       />
     );
   };
