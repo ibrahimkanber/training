@@ -86,7 +86,7 @@ export const Form = () => {
   return (
     <KeyboardAvoidingView
       behavior="padding"
-      keyboardVerticalOffset={100}
+      keyboardVerticalOffset={50}
       style={styles.keybaordAvoidingView}>
       <FlatList
         contentContainerStyle={styles.listContainer}
@@ -96,7 +96,6 @@ export const Form = () => {
         renderItem={renderItem}
         keyExtractor={(_, i) => i.toString()}
         ListHeaderComponent={<FormHeader />}
-        scrollEnabled
         ListFooterComponent={() => (
           <Button onPress={handleSubmit} title="Send" />
         )}
