@@ -1,5 +1,6 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react';
 import {Adress} from '../components/record/models/Adress';
+import {LanguageOptions} from '../hooks/useTranslations';
 
 export enum Routes {
   HOME = 'Home',
@@ -12,21 +13,23 @@ interface IMainContext {
   recordList?: Adress[];
   setSelectedTab?: React.Dispatch<React.SetStateAction<Routes>>;
   setRecordList?: React.Dispatch<React.SetStateAction<Adress[]>>;
-  lang?: 'en' | 'de';
+  lang?: LanguageOptions;
   changeLang?: () => void;
 }
 const defaultContext: IMainContext = {
   selectedTab: Routes.HOME,
-  lang: 'en',
+  lang: LanguageOptions.EN,
 };
 const MainContext = React.createContext<IMainContext>(defaultContext);
 
 export const MainProvider = ({children}: {children: React.ReactNode}) => {
   const [selectedTab, setSelectedTab] = useState(Routes.HOME);
   const [recordList, setRecordList] = useState<Adress[]>([]);
-  const [lang, setLang] = useState<'en' | 'de'>('en');
+  const [lang, setLang] = useState<LanguageOptions>(LanguageOptions.EN);
   const changeLang = useCallback(() => {
-    setLang(prev => (prev === 'en' ? 'de' : 'en'));
+    setLang(prev =>
+      prev === LanguageOptions.EN ? LanguageOptions.DE : LanguageOptions.EN,
+    );
   }, []);
   const values = useMemo(
     () => ({
