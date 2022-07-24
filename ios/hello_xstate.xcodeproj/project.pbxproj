@@ -114,7 +114,6 @@
 				DFA2E583FFCC6D534E06979F /* Pods-hello_xstate-hello_xstateTests.debug.xcconfig */,
 				6EAFB3F3D9962F00FA70D193 /* Pods-hello_xstate-hello_xstateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
