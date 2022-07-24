@@ -10,7 +10,7 @@ const Buttons = [
   {title: Routes.SETTINGS, id: 3, route: Routes.SETTINGS},
 ];
 export const TabSwitch = () => {
-  const {setSelectedTab} = useMainContext();
+  const {selectedTab, setSelectedTab} = useMainContext();
   const handleSwitch = (route: Routes) => {
     setSelectedTab?.(route);
   };
@@ -23,6 +23,7 @@ export const TabSwitch = () => {
           title={button.title}
           onPress={() => handleSwitch(button.route)}
           containerStyle={styles.button}
+          outline={selectedTab !== button.route}
         />
       ))}
     </View>
