@@ -13,7 +13,7 @@ export const translations_de = {
   },
   fieldNames: {
     [Fields.FIRST_NAME]: 'Vorname',
-    [Fields.LAST_NAME]: 'NachName',
+    [Fields.LAST_NAME]: 'Nachname',
     [Fields.STREET_NAME]: 'Straße',
     [Fields.STREET_NUMBER]: 'Straßennummer',
     [Fields.COMPANY_NAME]: 'Firmenanme',
