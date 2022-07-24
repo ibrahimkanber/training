@@ -7,6 +7,7 @@ export interface Action {
 
 export const initial: FormState = {
   [Fields.FIRST_NAME]: '',
+  [Fields.LAST_NAME]: '',
   [Fields.STREET_NAME]: '',
   [Fields.STREET_NUMBER]: '',
   [Fields.ZIP_CODE]: '',
@@ -25,6 +26,8 @@ export const formReducer = (state: FormState, action: Action): FormState => {
   switch (action.type) {
     case Fields.FIRST_NAME:
       return {...state, firstName: action.payload};
+    case Fields.LAST_NAME:
+      return {...state, lastName: action.payload};
     case Fields.STREET_NAME:
       return {...state, streetName: action.payload};
     case Fields.STREET_NUMBER:

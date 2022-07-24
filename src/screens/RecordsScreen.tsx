@@ -10,6 +10,9 @@ import {ScreenLayout} from './ScreenLayout';
 
 export const RecordsScreen = () => {
   const {recordList} = useMainContext();
+  const sortedRecordList = recordList?.sort((a, b) =>
+    a.getLastName().localeCompare(b.getLastName()),
+  );
   const renderItem = ({item}: {item: Adress}) => {
     return (
       <Box style={styles.container}>
@@ -20,7 +23,7 @@ export const RecordsScreen = () => {
   return (
     <ScreenLayout>
       <FlatList
-        data={recordList!}
+        data={sortedRecordList!}
         keyExtractor={(_, index) => index.toString()}
         renderItem={renderItem}
       />

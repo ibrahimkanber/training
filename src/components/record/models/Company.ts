@@ -4,6 +4,7 @@ import {Adress} from './Adress';
 export class Company extends Adress {
   constructor(
     firstName: string,
+    lastName: string,
     streetName: string,
     streetNumber: string,
     zipCode: string,
@@ -11,7 +12,15 @@ export class Company extends Adress {
     phoneNumber: string,
     private companyName: string,
   ) {
-    super(firstName, streetName, streetNumber, zipCode, town, phoneNumber);
+    super(
+      firstName,
+      lastName,
+      streetName,
+      streetNumber,
+      zipCode,
+      town,
+      phoneNumber,
+    );
   }
 
   toString(): string {

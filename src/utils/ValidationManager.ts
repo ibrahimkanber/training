@@ -2,7 +2,8 @@ import {Fields} from '../components/record/constants';
 import {FormFieldValues} from '../components/record/formReducer';
 
 export enum ValidationMethodeMapping {
-  firstName = 'validateFirstName',
+  firstName = 'validateUserName',
+  lastName = 'validateUserName',
   streetName = 'validateStreetName',
   streetNumber = 'validateStreetNumber',
   zipCode = 'validateZipCode',
@@ -21,7 +22,7 @@ class ValidationManager {
   private static phoneNumberPattern = /^[0-9"+/-]{0,20}$/;
   private static companyNamePattern = /^[a-zA-Z.,:;/"]*$/;
 
-  validateFirstName(firstName: string) {
+  validateUserName(firstName: string) {
     return !!firstName && !!firstName.match(ValidationManager.firstNamePattern);
   }
   validateStreetName(streetName: string) {

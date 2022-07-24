@@ -1,5 +1,6 @@
 export enum Fields {
   FIRST_NAME = 'firstName',
+  LAST_NAME = 'lastName',
   STREET_NAME = 'streetName',
   STREET_NUMBER = 'streetNumber',
   ZIP_CODE = 'zipCode',
@@ -10,6 +11,7 @@ export enum Fields {
 
 export const entryList = [
   Fields.FIRST_NAME,
+  Fields.LAST_NAME,
   Fields.STREET_NAME,
   Fields.STREET_NUMBER,
   Fields.ZIP_CODE,

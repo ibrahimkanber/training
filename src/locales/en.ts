@@ -3,6 +3,7 @@ import {Fields} from '../components/record/constants';
 export const translations_en = {
   error: {
     [Fields.FIRST_NAME]: 'First name error',
+    [Fields.LAST_NAME]: 'last name error',
     [Fields.STREET_NAME]: 'Street name error',
     [Fields.STREET_NUMBER]: 'Street number error',
     [Fields.COMPANY_NAME]: 'Company name error',
@@ -12,6 +13,7 @@ export const translations_en = {
   },
   fieldNames: {
     [Fields.FIRST_NAME]: 'First Name',
+    [Fields.LAST_NAME]: 'Last Name',
     [Fields.STREET_NAME]: 'Street Name',
     [Fields.STREET_NUMBER]: 'Street Number',
     [Fields.COMPANY_NAME]: 'Company Name',
