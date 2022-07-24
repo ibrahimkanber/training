@@ -21,11 +21,15 @@ const FormHeader = () => {
 
 export const Form = () => {
   const {showAlert} = useAlert();
-  const {recordList, setRecordList} = useMainContext();
+  const {recordList, setRecordList, enableRealtimeValidation} =
+    useMainContext();
   const [state, dispatch] = useReducer(formReducer, initial);
   const [errors, fields] = useTranslations(['error', 'fieldNames']);
   const handleChange = (selectedField: Fields) => (val: string) => {
     dispatch(formActions.setFieldValue(selectedField, val));
+    if (!enableRealtimeValidation) {
+      return;
+    }
     const methodName = ValidationMethodeMapping[selectedField];
     const result = validationManager[methodName](val);
     const isSettedBeforeAsError = state.errorCodes.includes(selectedField);

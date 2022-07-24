@@ -1,20 +1,30 @@
 import {StyleSheet, Text} from 'react-native';
-import {useMainContext} from '../../providers/MainProvider';
 import {Box} from '../ui/Box';
 import {Button} from '../ui/Button';
 import React from 'react';
 import {theme} from '../../theming';
-export const ListItem = () => {
-  const {lang, changeLang} = useMainContext();
+
+interface IListItem {
+  onButtonPress?: () => void;
+  buttonTitle: string;
+  rightElementTitle?: string;
+}
+export const ListItem = ({
+  onButtonPress,
+  buttonTitle,
+  rightElementTitle,
+}: IListItem) => {
   return (
-    <Box style={styles.container}>
-      <Button
-        title="Language"
-        onPress={changeLang}
-        containerStyle={styles.button}
-      />
-      <Text>Active---{lang}</Text>
-    </Box>
+    <>
+      <Box style={styles.container}>
+        <Button
+          title={buttonTitle}
+          onPress={onButtonPress}
+          containerStyle={styles.button}
+        />
+        <Text style={styles.rightTitle}>{rightElementTitle}</Text>
+      </Box>
+    </>
   );
 };
 
@@ -30,5 +40,9 @@ const styles = StyleSheet.create({
   button: {
     paddingHorizontal: theme.spaces.m,
     paddingVertical: theme.spaces.xs,
+  },
+  rightTitle: {
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
 });
