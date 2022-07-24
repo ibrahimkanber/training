@@ -12,7 +12,7 @@ export enum ValidationMethodeMapping {
 }
 
 class ValidationManager {
-  private static leastOneLetterPatter = /[a-zA-Z]+/;
+  private static minOneLetterPatter = /[a-zA-Z]+/;
   private static firstNamePattern = /^[a-zA-Z]*$/;
   private static streetNamePattern = /^[a-zA-Z"-+.,:;/]*$/;
   private static streetNumberPattern = /^[a-zA-Z0-9]*$/;
@@ -22,12 +22,10 @@ class ValidationManager {
   private static companyNamePattern = /^[a-zA-Z.,:;/"]*$/;
 
   validateFirstName(firstName: string) {
-    //console.log('name validation');
-    //const name2 = name.replace(/\s/g, '');
     return !!firstName && !!firstName.match(ValidationManager.firstNamePattern);
   }
   validateStreetName(streetName: string) {
-    const firsStep = !!streetName.match(ValidationManager.leastOneLetterPatter);
+    const firsStep = !!streetName.match(ValidationManager.minOneLetterPatter);
     const secondStep = !!streetName.match(ValidationManager.streetNamePattern);
     return firsStep && secondStep;
   }
