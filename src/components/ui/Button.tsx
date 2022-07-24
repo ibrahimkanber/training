@@ -12,7 +12,7 @@ import {theme} from '../../theming';
 interface ButtonProps extends PressableProps {
   title: string;
   containerStyle?: ViewStyle;
-  onPress: () => void;
+  onPress?: () => void;
   outline?: boolean;
 }
 
